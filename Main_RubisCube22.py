@@ -18,8 +18,7 @@ import random
 
 # tiles is a structure that group all the tiles of the rubiscube ; 24 in total
 tiles = []
-# dA is the step used for the rotation
-dA = np.pi/4
+
 ## Creation of a Sphere centered and having a radius of 1 with a black color
 sphere(pos=vector(0,0,0),size=vector(2,2,2),color=vector(0,0,0))
 ## creation of vectors which will be used to draw the squares of each face 
@@ -91,39 +90,60 @@ positions['top_right']    = (tiles[20],tiles[22])
 positions['top_left']   = (tiles[21],tiles[23])
 
 
-
+######################################################################################
+#################     f rotation : front rotation anti clockwise   ##################
+######################################################################################
+# dA is the step used for the rotation
+def f():
+    dA = -np.pi/4
+    pieces = positions['front_top']
+    for tile in pieces:
+        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))    
+    pieces = positions['front_bottom']
+    for tile in pieces:
+        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))    
+    pieces = positions['top_bottom']
+    for tile in pieces:
+        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
+    pieces = positions['bottom_top']
+    for tile in pieces:
+        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
+    pieces = positions['left_right']
+    for tile in pieces:
+        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
+    pieces = positions['right_left']
+    for tile in pieces:
+        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+    
 
 ######################################################################################
 #################     f' rotation : front rotation anti clockwise   ##################
 ######################################################################################
-
-pieces = positions['front_top']
-for tile in pieces:
-    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
-
-pieces = positions['front_bottom']
-for tile in pieces:
-    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
-
-pieces = positions['top_bottom']
-for tile in pieces:
-    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
-    
-pieces = positions['bottom_top']
-for tile in pieces:
-    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0)) 
-    
-pieces = positions['left_right']
-for tile in pieces:
-    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
-    
-pieces = positions['right_left']
-for tile in pieces:
-    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+# dA is the step used for the rotation
+def f_prime():
+    dA = np.pi/4
+    pieces = positions['front_top']
+    for tile in pieces:
+        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))    
+    pieces = positions['front_bottom']
+    for tile in pieces:
+        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))    
+    pieces = positions['top_bottom']
+    for tile in pieces:
+        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
+    pieces = positions['bottom_top']
+    for tile in pieces:
+        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
+    pieces = positions['left_right']
+    for tile in pieces:
+        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
+    pieces = positions['right_left']
+    for tile in pieces:
+        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
     
     
     
-    
+f()    
     
     
 # pieces = positions['front_bottom']
