@@ -61,17 +61,31 @@ for rank,side in enumerate(tile_pos):
 
 positions = {'front_top': [], 'front_bottom': [], 'back': [], 'right': [], 'bottom': [], 'top': []}
 
-positions['front_top']  = tiles[0:2]
-positions['front_bottom']  = tiles[2:4]
+positions['front_top']     = (tiles[0],tiles[1])
+positions['front_bottom']  = (tiles[2],tiles[3])
+positions['front_left']    = (tiles[0],tiles[2])
+positions['front_right']   = (tiles[1],tiles[3])
 
-positions['left_top']   = tiles[4:6]
-positions['left_bottom']   = tiles[6:8]
+positions['left_top']     = (tiles[4],tiles[5])
+positions['left_bottom']  = (tiles[6],tiles[7])
+positions['left_left']    = (tiles[4],tiles[6])
+positions['left_right']   = (tiles[5],tiles[7])
 
-positions['back_top']   = tiles[8:10]
-positions['back_bottom']   = tiles[10:12]
+positions['back_top']     = (tiles[8],tiles[9])
+positions['back_bottom']  = (tiles[10],tiles[11])
+positions['back_left']    = (tiles[8],tiles[10])
+positions['back_right']   = (tiles[9],tiles[11])
 
-positions['right_top']  = tiles[12:14]
-positions['right_bottom']  = tiles[14:16]
+positions['right_top']     = (tiles[12],tiles[13])
+positions['right_bottom']  = (tiles[14],tiles[15])
+positions['right_right']    = (tiles[12],tiles[14])
+positions['right_left']   = (tiles[13],tiles[15])
+
+
+
+
+
+
 
 positions['bottom_top'] = tiles[16:18]
 positions['bottom_bottom'] = tiles[18:20]
@@ -80,15 +94,18 @@ positions['top_top']    = tiles[20:22]
 positions['top_bottom']    = tiles[22:24]
 
 
-pieces = positions['front_top']
+pieces = positions['right_left']
 for tile in pieces:
     tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
-pieces = positions['front_bottom']
-for tile in pieces:
-    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
-pieces = positions['top_bottom']
-for tile in pieces:
-    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+    
+    
+    
+# pieces = positions['front_bottom']
+# for tile in pieces:
+#     tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+# pieces = positions['top_bottom']
+# for tile in pieces:
+#     tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
 
 
 
