@@ -85,17 +85,44 @@ positions['bottom_bottom']  = (tiles[18],tiles[19])
 positions['bottom_right']    = (tiles[16],tiles[18])
 positions['bottom_left']   = (tiles[17],tiles[19])
 
+positions['top_top']     = (tiles[20],tiles[21])
+positions['top_bottom']  = (tiles[22],tiles[23])
+positions['top_right']    = (tiles[20],tiles[22])
+positions['top_left']   = (tiles[21],tiles[23])
 
 
 
 
-positions['top_top']    = tiles[20:22]
-positions['top_bottom']    = tiles[22:24]
+######################################################################################
+#################     f' rotation : front rotation anti clockwise   ##################
+######################################################################################
 
-
-pieces = positions['bottom_right']
+pieces = positions['front_top']
 for tile in pieces:
     tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+
+pieces = positions['front_bottom']
+for tile in pieces:
+    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+
+pieces = positions['top_bottom']
+for tile in pieces:
+    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+    
+pieces = positions['bottom_top']
+for tile in pieces:
+    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0)) 
+    
+pieces = positions['left_right']
+for tile in pieces:
+    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+    
+pieces = positions['right_left']
+for tile in pieces:
+    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+    
+    
+    
     
     
     
