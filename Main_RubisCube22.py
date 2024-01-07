@@ -59,21 +59,43 @@ for rank,side in enumerate(tile_pos):
 ####################     Basic animation . 1 Flip Top Right  #######################
 ####################################################################################
 
-positions = {'front': [], 'left': [], 'back': [], 'right': [], 'bottom': [], 'top': []}
-positions['front']  = tiles[0:4]
-positions['left']   = tiles[4:8]
-positions['back']   = tiles[8:12]
-positions['right']  = tiles[12:16]
-positions['bottom'] = tiles[16:20]
-positions['top']    = tiles[20:24]
+positions = {'front_top': [], 'front_bottom': [], 'back': [], 'right': [], 'bottom': [], 'top': []}
 
-pieces = positions['front']
+positions['front_top']  = tiles[0:2]
+positions['front_bottom']  = tiles[2:4]
+
+positions['left_top']   = tiles[4:6]
+positions['left_bottom']   = tiles[6:8]
+
+positions['back_top']   = tiles[8:10]
+positions['back_bottom']   = tiles[10:12]
+
+positions['right_top']  = tiles[12:14]
+positions['right_bottom']  = tiles[14:16]
+
+positions['bottom_top'] = tiles[16:18]
+positions['bottom_bottom'] = tiles[18:20]
+
+positions['top_top']    = tiles[20:22]
+positions['top_bottom']    = tiles[22:24]
+
+
+pieces = positions['front_top']
+for tile in pieces:
+    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+pieces = positions['front_bottom']
+for tile in pieces:
+    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+pieces = positions['top_bottom']
 for tile in pieces:
     tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
 
-pieces = positions['top']
-for tile in pieces:
-    tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+
+
+
+# pieces = positions['top']
+# for tile in pieces:
+#     tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
     
    
 
