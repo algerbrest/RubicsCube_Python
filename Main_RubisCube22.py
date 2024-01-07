@@ -54,10 +54,9 @@ for rank,side in enumerate(tile_pos):
         tile.rotate(angle = angle[rank][0],axis=angle[rank][1])
         tiles.append(tile)
 
-
-####################################################################################
-####################     Basic animation . 1 Flip Top Right  #######################
-####################################################################################
+######################################################################################
+####################     Create a list associating the tiles   #######################
+######################################################################################
 
 positions = {'front_top': [], 'front_bottom': [], 'back': [], 'right': [], 'bottom': [], 'top': []}
 
@@ -81,20 +80,20 @@ positions['right_bottom']  = (tiles[14],tiles[15])
 positions['right_right']    = (tiles[12],tiles[14])
 positions['right_left']   = (tiles[13],tiles[15])
 
+positions['bottom_top']     = (tiles[16],tiles[17])
+positions['bottom_bottom']  = (tiles[18],tiles[19])
+positions['bottom_right']    = (tiles[16],tiles[18])
+positions['bottom_left']   = (tiles[17],tiles[19])
 
 
 
 
-
-
-positions['bottom_top'] = tiles[16:18]
-positions['bottom_bottom'] = tiles[18:20]
 
 positions['top_top']    = tiles[20:22]
 positions['top_bottom']    = tiles[22:24]
 
 
-pieces = positions['right_left']
+pieces = positions['bottom_right']
 for tile in pieces:
     tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
     
