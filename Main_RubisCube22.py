@@ -95,26 +95,29 @@ positions['top_left']   = (tiles[21],tiles[23])
 ######################################################################################
 # dA is the step used for the rotation
 def f():
-    dA = -np.pi/4
-    pieces = positions['front_top']
-    for tile in pieces:
-        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))    
-    pieces = positions['front_bottom']
-    for tile in pieces:
-        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))    
-    pieces = positions['top_bottom']
-    for tile in pieces:
-        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
-    pieces = positions['bottom_top']
-    for tile in pieces:
-        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
-    pieces = positions['left_right']
-    for tile in pieces:
-        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
-    pieces = positions['right_left']
-    for tile in pieces:
-        tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
-    
+    dA = -np.pi/50
+    DA = dA
+    while DA > -np.pi/2 -np.pi/50 :
+        DA = DA - np.pi/50 
+        pieces = positions['front_top']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))    
+        pieces = positions['front_bottom']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))    
+        pieces = positions['top_bottom']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
+        pieces = positions['bottom_top']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
+        pieces = positions['left_right']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
+        pieces = positions['right_left']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+        rate(30)
 
 ######################################################################################
 #################     f' rotation : front rotation anti clockwise   ##################
@@ -146,8 +149,40 @@ def f_prime():
         rate(30)
         
     
-input("f_prime ?")    
-f_prime()    
+######################################################################################
+#################     b rotation : back rotation anti clockwise   ##################
+######################################################################################
+# dA is the step used for the rotation
+def b():
+    dA = -np.pi/50
+    DA = dA
+    while DA > -np.pi/2 -np.pi/50 :
+        DA = DA - np.pi/50 
+        pieces = positions['back_top']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))    
+        pieces = positions['back_bottom']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))    
+        pieces = positions['top_top']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
+        pieces = positions['bottom_bottom']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
+        pieces = positions['left_left']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))        
+        pieces = positions['right_right']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(0,0,1),origin=vector(0,0,0))
+        rate(30)
+    
+    
+    
+    
+# input("f_prime ?")    
+# f_prime()    
     
     
 # pieces = positions['front_bottom']
