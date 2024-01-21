@@ -238,7 +238,35 @@ def r_prime():
             tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))
         rate(30)    
         
- 
+######################################################################################
+#################     R rotation : right rotation  clockwise   ##################
+######################################################################################
+# dA is the step used for the rotation
+def r():
+     dA = -np.pi/50
+     DA = dA
+     while DA > -np.pi/2 - np.pi/50 :
+        DA = DA - np.pi/50 
+        pieces = positions['front_right']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))    
+        pieces = positions['top_right']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))    
+        pieces = positions['bottom_right']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))        
+        pieces = positions['back_left']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))        
+        pieces = positions['right_left']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))        
+        pieces = positions['right_right']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))
+        rate(30)    
+      
     
  
 # input("f_prime ?")    
