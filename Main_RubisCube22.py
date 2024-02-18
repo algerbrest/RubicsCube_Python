@@ -267,7 +267,37 @@ def r():
             tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))
         rate(30)    
       
+
     
+######################################################################################
+#################     L rotation : Left rotation  clockwise   ##################
+######################################################################################
+# dA is the step used for the rotation
+def l():
+     dA = -np.pi/50
+     DA = dA
+     while DA > -np.pi/2 - np.pi/50 :
+        DA = DA - np.pi/50 
+        pieces = positions['front_left']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))    
+        pieces = positions['top_left']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))    
+        pieces = positions['bottom_left']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))        
+        pieces = positions['back_right']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))        
+        pieces = positions['left_left']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))        
+        pieces = positions['left_right']
+        for tile in pieces:
+            tile.rotate(angle= dA,axis = vector(1,0,0),origin=vector(0,0,0))
+        rate(30)    
+
  
 # input("f_prime ?")    
 # f_prime()    
